@@ -1,0 +1,242 @@
+
+.sidebar {
+  //box-shadow: 0 10px 30px -12px rgba(0, 0, 0, 0.42), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 20px;
+  z-index: 10000;
+
+  &:before, &:after {
+    content: "";
+    height: 100vh;
+    left: 0;
+    top: 0;
+    width: 100%;
+    position: absolute;
+  }
+
+  &:before {
+    background: {
+      image: url('/block8/material/img/sidebar-1.jpg');
+      repeat: no-repeat;
+      position: center center;
+      size: cover;
+    }
+
+    z-index: 1;
+  }
+
+  &:after {
+    background: rgba(0,0,0,0.8);
+    z-index: 2;
+  }
+
+  a.logo {
+    position: relative;
+    z-index: 10;
+
+    img {
+      display: block;
+      margin: 15px auto;
+      max-width: 80%;
+    }
+  }
+
+  .sidebar-content {
+    border-top: 1px solid #666;
+    color: #fff;
+    padding: 20px 0;
+    margin-top: 20px;
+    position: relative;
+    z-index: 10;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    li {
+      margin: 0 0 8px;
+      padding: 0;
+
+      a {
+        border-radius: 4px;
+        color: #ddd;
+        display: block;
+        font-size: 0.9em;
+        font-weight: 100;
+        padding: 15px;
+        outline: none;
+
+        &:focus, &:hover, &:active {
+          outline: none;
+        }
+
+        svg {
+          margin-right: 15px;
+        }
+
+        &:hover {
+          background: rgba(255, 255, 255, 0.1);
+          text-decoration: none;
+        }
+      }
+
+      div.collapse {
+        margin-top: 10px;
+
+        li a {
+          font-size: 0.9em;
+          padding: 8px 8px 8px 60px;
+        }
+      }
+
+      &.active {
+        div.collapse {
+          display: block;
+        }
+
+        > a {
+          background: $color-body;
+          color: $color-primary;
+          margin-right: -20px;
+          border-top-right-radius: 0;
+          border-bottom-right-radius: 0;
+        }
+
+        > a[data-toggle="collapse"] {
+          background: rgba(#fff, 0.1);
+        }
+      }
+
+
+    }
+  }
+
+  &.light {
+    &:after {
+      background-color: rgba(255, 255, 255, 0.8);
+    }
+
+    .sidebar-content {
+      color: #333;
+
+      ul {
+        li {
+          a {
+            color: #333;
+          }
+
+          &.active {
+            a {
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.no-bg {
+    &:before, &:after {
+      display: none;
+    }
+  }
+
+  .user {
+    border-top: 1px solid #777;
+    margin: 10px 0;
+    position: relative;
+    z-index: 10;
+    padding-top: 20px;
+
+    > a {
+      display: block;
+      line-height: 40px;
+      color: #ddd;
+      text-decoration: none;
+
+      &:hover {
+        color: #ddd;
+        text-decoration: none;
+      }
+
+      &:before {
+        content: "";
+        display: inline-block;
+        width: 0;
+        height: 0;
+        margin-top: 19px;
+        position: absolute;
+        right: 5px;
+        margin-left: 2px;
+        vertical-align: middle;
+        border-top: 4px dashed;
+        border-top: 4px solid\9;
+        border-right: 4px solid transparent;
+        border-left: 4px solid transparent;
+      }
+
+      &:after {
+        display: block;
+        content: "";
+        clear: both;
+      }
+
+      img {
+        float: left;
+        width: 40px;
+        vertical-align: middle;
+        margin-right: 15px;
+      }
+    }
+
+    .collapse {
+      padding-top: 10px;
+
+      li {
+        a {
+          padding: 6px 15px;
+        }
+      }
+    }
+  }
+}
+
+.sidebar-toggle {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: $gray-800;
+  float: right;
+  font-size: 30px;
+}
+
+// Small screens and below:
+@media (max-width: 767px) {
+  .sidebar {
+    position: fixed;
+    width: 260px;
+    box-shadow: none;
+    transition: transform 0.4s;
+    transform: translate3d(-260px, 0, 0);
+
+    &.active {
+      box-shadow: 0 10px 30px -12px rgba(0, 0, 0, 0.42), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  .layout {
+    display: block;
+  }
+}
+
+// Small screens and below:
+@media (min-width: 768px) {
+  .sidebar {
+    position: relative;
+  }
+}

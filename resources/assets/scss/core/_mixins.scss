@@ -1,0 +1,37 @@
+@mixin grid-columns($prefix) {
+  .#{$prefix}-1, .col-#{$prefix}-2  {
+    grid-column-start: auto;
+    grid-column-end: span 1;
+    position: relative;
+  }
+
+  .#{$prefix}-2, .col-#{$prefix}-4  {
+    grid-column-start: auto;
+    grid-column-end: span 2;
+    position: relative;
+  }
+
+  .#{$prefix}-3, .col-#{$prefix}-6  {
+    grid-column-start: auto;
+    grid-column-end: span 3;
+    position: relative;
+  }
+
+  .#{$prefix}-4, .col-#{$prefix}-8  {
+    grid-column-start: auto;
+    grid-column-end: span 4;
+    position: relative;
+  }
+
+  .#{$prefix}-5, .col-#{$prefix}-10  {
+    grid-column-start: auto;
+    grid-column-end: span 5;
+    position: relative;
+  }
+
+  .#{$prefix}-6, .col-#{$prefix}-12  {
+    grid-column-start: auto;
+    grid-column-end: span 6;
+    position: relative;
+  }
+}

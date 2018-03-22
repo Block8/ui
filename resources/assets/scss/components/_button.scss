@@ -1,0 +1,70 @@
+a.btn, button.btn {
+  cursor: pointer;
+  display: inline-block;
+  padding: 12px 30px;
+  background: $gray-400;
+  border: none;
+  border-radius: 3px;
+  color: $gray-900;
+  text-decoration: none;
+  transition: background-color 0.3s, box-shadow 0.3s, border-color 0.3s;
+  white-space: nowrap;
+  text-transform: uppercase;
+  font-size: 12px;
+  line-height: 1.5;
+  margin: 10px 1px;
+
+  &:hover {
+    background: $gray-500;
+    border-color: $gray-600;
+  }
+
+  svg {
+    margin-right: 5px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &.btn-xs {
+    font-size: 10px;
+    padding: 4px 15px;
+  }
+
+  &.btn-sm {
+    font-size: 11px;
+    padding: 5px 20px;
+  }
+
+  &.btn-lg {
+    font-size: 14px;
+    padding: 18px 36px;
+  }
+
+  &.btn-icon, &.btn-simple {
+    background: transparent;
+    color: $gray-400;
+    padding: 10px;
+    margin: 4px;
+
+    &.btn-xs {
+      font-size: 10px;
+      padding: 4px;
+    }
+
+    &.btn-sm {
+      font-size: 11px;
+      padding: 5px;
+    }
+
+    &.btn-lg {
+      font-size: 14px;
+      padding: 15px;
+    }
+  }
+
+  &.pull-right {
+    margin-top: 0;
+  }
+}

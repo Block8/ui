@@ -1,0 +1,24 @@
+{
+  "name": "block8/material-dashboard",
+  "description": "Laravel package version of the Material Dashboard templates.",
+  "license": "private",
+
+  "require": {
+    "php": ">=7.1.0",
+    "laravel/framework": "^5.5"
+  },
+
+  "autoload": {
+    "psr-4": {
+      "Block8\\UI\\": "src/"
+    }
+  },
+
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Block8\\UI\\UIServiceProvider"
+      ]
+    }
+  }
+}

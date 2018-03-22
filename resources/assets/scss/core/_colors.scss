@@ -1,0 +1,70 @@
+
+.card .icon {
+  background: linear-gradient(135deg, lighten($color-primary, 10%) 0%,darken($color-primary, 5%) 100%);
+}
+
+@each $key, $color in map-merge($colors, $statusColors) {
+  .bg-#{$key} {
+    background-color: $color !important;
+  }
+
+  .card .bg-#{$key}.icon {
+    background: linear-gradient(135deg, lighten($color, 10%) 0%,darken($color, 5%) 100%);
+  }
+
+  .card {
+    &.#{$key} {
+      box-shadow: 0 4px 20px 0px rgba($color, 0.14), 0 7px 10px -5px rgba($color, 0.4);
+
+      > h3 {
+        color: $color;
+      }
+    }
+  }
+
+  a.btn.btn-#{$key}, button.btn.btn-#{$key} {
+    background: $color;
+    box-shadow: 0 2px 2px 0 rgba($color, 0.14), 0 3px 1px -2px rgba($color, 0.2), 0 1px 5px 0 rgba($color, 0.12);
+    color: #fff;
+
+    &:hover {
+      background: darken($color, 2%);
+      box-shadow: 0 14px 26px -12px rgba($color, 0.42), 0 4px 23px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba($color, 0.2);
+    }
+
+    &.btn-icon, &.btn-simple {
+      background: transparent;
+      box-shadow: none;
+      color: $color;
+
+      &:hover {
+        color: darken($color, 5%);
+      }
+    }
+  }
+
+  .alert.alert-#{$key} {
+    background: $color;
+    box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba($color, 0.4);
+    color: #fff;
+
+    &.alert-with-icon {
+      > svg {
+        box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba($color, 0.4);
+        color: $color;
+      }
+    }
+  }
+
+  .progress.progress-#{$key} {
+    background: rgba($color, 0.5);
+
+    .progress-bar {
+      background: $color;
+    }
+  }
+
+  .text-#{$key} {
+    color: $color;
+  }
+}

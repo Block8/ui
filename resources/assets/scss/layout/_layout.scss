@@ -1,0 +1,47 @@
+
+.layout {
+  display: grid;
+  grid-template-columns: 260px auto;
+}
+
+.main {
+  background: $color-body;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  padding: 20px 40px;
+
+  h1 {
+    font-weight: 100;
+    margin: 0 0 40px;
+  }
+}
+
+.collapse {
+  display: none;
+
+  &.in {
+    display: block;
+  }
+}
+
+.pull-right {
+  float: right;
+}
+
+.pull-left {
+  float: left;
+}
+
+@media (max-width: 767px) {
+  .main {
+    padding: 20px;
+  }
+}
+
+@media (min-width: 768px) {
+  .sidebar-toggle {
+    display: none;
+  }
+}

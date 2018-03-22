@@ -1,0 +1,13 @@
+
+.progress {
+  background: #ddd;
+  display: block;
+  height: 5px;
+  margin: 10px 0 15px;
+
+  .progress-bar {
+    background: $color-primary;
+    height: 5px;
+    max-width: 100% !important;
+  }
+}
