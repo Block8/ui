@@ -1,6 +1,6 @@
 {
-  "name": "block8/material-dashboard",
-  "description": "Laravel package version of the Material Dashboard templates.",
+  "name": "block8/ui",
+  "description": "Laravel package of the Block 8 UI template.",
   "license": "private",
 
   "require": {
