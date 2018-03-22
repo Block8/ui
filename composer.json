@@ -1,8 +1,7 @@
 {
   "name": "block8/ui",
   "description": "Laravel package of the Block 8 UI template.",
-  "license": "private",
-
+  "license": "BSD-2-Clause",
   "require": {
     "php": ">=7.1.0",
     "laravel/framework": "^5.5"
