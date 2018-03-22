@@ -1,0 +1,1 @@
+Laravel package providing a simple, clean, admin user interface.
