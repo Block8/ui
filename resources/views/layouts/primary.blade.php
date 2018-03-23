@@ -19,7 +19,13 @@
 <body>
 <div class="layout">
     <div class="sidebar">
-        <a class="logo" href="/"><img src="/img/logo-dark.svg" alt="Block 8 Digital"></a>
+        <a class="logo" href="/">
+            @isset($logo)
+            <img src="{{ $logo }}" alt="{{ getenv('APP_NAME') }}">
+            @else
+            {{ getenv('APP_NAME') }}
+            @endisset
+        </a>
 
         @if(Auth::user())
         <div class="user">

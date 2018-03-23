@@ -44,13 +44,16 @@ $colors: (
   gray-900: $gray-900,
 );
 
+$color-primary: map-get($colors, orange) !default;
+$color-secondary: map-get($colors, cyan) !default;
+
 $statusColors: (
     success: map-get($colors, green),
     danger: map-get($colors, red),
     warning: map-get($colors, yellow),
     info: map-get($colors, cyan),
-    primary: map-get($colors, orange),
-    secondary: map-get($colors, cyan),
+    primary: $color-primary,
+    secondary: $color-secondary,
 
     edit: map-get($colors, yellow),
     delete: map-get($colors, red),
@@ -58,8 +61,6 @@ $statusColors: (
 );
 
 // Primary:
-$color-primary: map-get($colors, orange) !default;
-$color-secondary: map-get($colors, cyan) !default;
 $color-body: map-get($colors, gray-200) !default;
 
 // Links:
