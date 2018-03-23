@@ -34,6 +34,24 @@
   float: left;
 }
 
+html.external {
+  body {
+    padding-top: 18vh;
+    min-height: 100vh;
+
+    .login {
+      margin: 0 auto;
+      max-width: 90%;
+      width: 400px;
+
+      input[type="checkbox"] {
+        margin-top: 15px;
+      }
+    }
+  }
+}
+
+
 @media (max-width: 767px) {
   .main {
     padding: 20px;
