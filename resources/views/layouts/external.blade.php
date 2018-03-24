@@ -11,6 +11,13 @@
         <link href="/css/dashboard.css" rel="stylesheet" />
     </head>
     <body  style="background: url({{ !empty($background) ? $background : '/block8/ui/img/trees.jpeg' }}) no-repeat top center; background-size: cover;">
+
+        @isset($logo)
+            <div class="logo">
+                <img src="{{ $logo }}">
+            </div>
+        @endisset
+
         @yield('content')
 
         <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
