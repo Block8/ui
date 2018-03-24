@@ -40,6 +40,11 @@
             <div class="collapse" id="userNavigation" aria-expanded="false">
                 <ul class="nav">
                     @yield('user-navigation')
+                    <li>
+                        @component('ui::forms.form', ['route' => route('logout'), 'method' => 'POST'])
+                            <button><i class="fas fa-sign-out-alt"></i> Logout</button>
+                        @endcomponent
+                    </li>
                 </ul>
             </div>
         </div>

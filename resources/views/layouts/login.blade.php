@@ -3,7 +3,7 @@
     <div class="login">
         @component('ui::forms.form', ['route' => route('login'), 'method' => 'POST'])
             @component('ui::card')
-                @slot('title', env('APP_NAME'))
+                @slot('title', $title ?? env('APP_NAME'))
                 @slot('icon', 'unlock')
 
                 @component('material::forms.input-email')
