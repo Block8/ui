@@ -42,7 +42,7 @@
                     @yield('user-navigation')
                     <li>
                         @component('ui::forms.form', ['route' => route('logout'), 'method' => 'POST'])
-                            <button><i class="fas fa-sign-out-alt"></i> Logout</button>
+                            <button><i class="fas fa-fw fa-sign-out-alt"></i> Logout</button>
                         @endcomponent
                     </li>
                 </ul>

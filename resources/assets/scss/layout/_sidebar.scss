@@ -1,36 +1,13 @@
 
 .sidebar {
+  background: $gray-800;
+
   //box-shadow: 0 10px 30px -12px rgba(0, 0, 0, 0.42), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
   height: 100vh;
   overflow-x: hidden;
   overflow-y: auto;
   padding: 20px;
   z-index: 10000;
-
-  &:before, &:after {
-    content: "";
-    height: 100vh;
-    left: 0;
-    top: 0;
-    width: 100%;
-    position: absolute;
-  }
-
-  &:before {
-    background: {
-      image: url('/block8/material/img/sidebar-1.jpg');
-      repeat: no-repeat;
-      position: center center;
-      size: cover;
-    }
-
-    z-index: 1;
-  }
-
-  &:after {
-    background: rgba(0,0,0,0.8);
-    z-index: 2;
-  }
 
   a.logo {
     position: relative;
@@ -76,6 +53,7 @@
         }
 
         svg {
+          font-size: 18px;
           margin-right: 15px;
         }
 
