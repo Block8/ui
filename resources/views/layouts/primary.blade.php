@@ -10,7 +10,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     @if(file_exists(public_path('css/dashboard.css')))
-    <link href="/css/dashboard.css" rel="stylesheet">
+    <link href="{{ mix('/css/dashboard.css') }}" rel="stylesheet">
     @endif
 
     <link rel="stylesheet" href="/block8/ui/js/datetimepicker/css/bootstrap-datetimepicker.min.css">
@@ -83,12 +83,12 @@
 
 
 
-<script src="/block8/ui/js/ui.js"></script>
+<script src="{{ mix('/block8/ui/js/ui.js') }}"></script>
 
 
 
 @if(file_exists(public_path('js/dashboard.js')))
-    <script src="/js/dashboard.js"></script>
+    <script src="{{ mix('/js/dashboard.js') }}"></script>
 @endif
 
 @stack('scripts')

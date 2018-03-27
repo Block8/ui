@@ -59,6 +59,17 @@ html.external {
       input[type="checkbox"] {
         margin-top: 15px;
       }
+
+      .external-auth {
+        a.btn {
+          display: block;
+
+          svg {
+            margin-right: 25px;
+            vertical-align: middle;
+          }
+        }
+      }
     }
   }
 }

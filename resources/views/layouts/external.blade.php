@@ -8,7 +8,7 @@
         <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
         <meta name="viewport" content="width=device-width" />
 
-        <link href="/css/dashboard.css" rel="stylesheet" />
+        <link href="{{ mix('/css/dashboard.css') }}" rel="stylesheet" />
     </head>
     <body  style="background: url({{ !empty($background) ? $background : '/block8/ui/img/trees.jpeg' }}) no-repeat top center; background-size: cover;">
 
