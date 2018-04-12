@@ -2,6 +2,7 @@
   background: #fff;
   border-radius: 5px;
   box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
+  clear: both;
   margin: 0 0 40px;
   padding: 20px;
   position: relative;
@@ -86,7 +87,6 @@
   }
 
   &.card-tabs {
-    clear: both;
     margin-top: 40.5px;
 
     > ul {
