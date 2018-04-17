@@ -8,6 +8,16 @@
     background-color: $color !important;
   }
 
+  .bg-#{$key}-muted, .table tbody tr.bg-#{$key}-muted {
+    background-color: rgba($color, 0.25);
+
+    &:nth-child(2n) {
+      background-color: rgba($color, 0.35);
+    }
+  }
+
+
+
   .card .bg-#{$key}.icon {
     background: linear-gradient(135deg, lighten($color, 10%) 0%,darken($color, 5%) 100%);
   }
@@ -66,5 +76,9 @@
 
   .text-#{$key} {
     color: $color;
+  }
+
+  .text-#{$key}-dark {
+    color: darken($color, 25%);
   }
 }
