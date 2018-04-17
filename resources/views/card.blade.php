@@ -6,7 +6,7 @@
     @endisset
 
     @isset($image)
-        <div class="image">
+        <div class="image bg-{{ $color or 'primary' }}">
             <img src="{{ $image }}">
         </div>
     @endisset
