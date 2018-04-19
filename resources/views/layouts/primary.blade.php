@@ -139,9 +139,7 @@
         '<span data-notify="message">{2}</span>' +
         '</div>'
     });
-
-    $.notify({icon: "fa-exclamation-triangle", message: 'Testing testing' }, { type: 'danger' });
-
+    
 
     $(document).ready(function () {
         @if(session('success'))
