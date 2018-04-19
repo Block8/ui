@@ -36,4 +36,8 @@
   button.close {
     display: none;
   }
+
+  &.alert-overlay {
+    z-index: 15000;
+  }
 }

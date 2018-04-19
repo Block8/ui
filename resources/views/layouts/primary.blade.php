@@ -15,6 +15,7 @@
 
     <link rel="stylesheet" href="/block8/ui/js/datetimepicker/css/bootstrap-datetimepicker.min.css">
     <link rel="stylesheet" href="/block8/ui/js/select2/select2.css">
+    <link rel="stylesheet" href="/block8/ui/css/animate.css">
 </head>
 <body>
 <div class="layout">
@@ -121,55 +122,39 @@
             $el.trigger('material:map-loaded', [map])
         });
     }
-</script>
 
-<!-- Material Notification Alerts -->
-<script>
-    function showSuccess(message){
-        $.notify({
-            icon: "check",
-            message: message
 
-        },{
-            type: 'success',
-            timer: 2500,
-            placement: {
-                from: 'top',
-                align: 'right'
-            }
-        });
-    }
+    $.notifyDefaults({
+        icon: 'fa-info',
+        timer: 2500,
+        type: 'info',
+        icon_type: 'class',
+        placement: {
+            from: 'top',
+            align: 'right'
+        },
+        template: '<div data-notify="container" class="alert-overlay alert alert-with-icon alert-{0}" role="alert">' +
+        '<i data-notify="icon" class="fas"></i> ' +
+        '<span data-notify="title">{1}</span> ' +
+        '<span data-notify="message">{2}</span>' +
+        '</div>'
+    });
 
-    function showAlert(message){
-        $.notify({
-            icon: "exclamation-triangle ",
-            message: message
+    $.notify({icon: "fa-exclamation-triangle", message: 'Testing testing' }, { type: 'danger' });
 
-        },{
-            type: 'danger',
-            timer: 2500,
-            placement: {
-                from: 'top',
-                align: 'right'
-            }
-        });
-    }
 
     $(document).ready(function () {
         @if(session('success'))
-        var success = "{{ session('success') }}";
-        showSuccess(success);
+        $.notify({icon: "fa-check", message: '{{ session('success') }}' }, { type: 'success' });
         @endif
 
         @if(session('error'))
-        var error = "{{ session('error') }}";
-        showAlert(error);
+        $.notify({icon: "fa-exclamation-triangle", message: '{{ session('error') }}' }, { type: 'danger' });
         @endif
 
         @if($errors->any())
         @foreach($errors->all() as $error)
-        var alert = "{{ $error }}";
-        showAlert(alert);
+        $.notify({icon: "fa-exclamation-triangle", message: '{{ $error }}' }, { type: 'danger' });
         @endforeach
         @endif
     });

@@ -1,3 +1,10 @@
-<button type="button" class="btn btn-danger btn-delete {{ $class }}" data-thing="{{ $thing }}" data-url="{{ $url }}">
-    <i class="fas fa-trash"></i> Delete {{ $thing }}
-</button>
+@can('update', $model)
+    @component('ui::forms.form')
+        @slot('action', $action)
+        @slot('method', 'DELETE')
+
+        <button type="button" class="btn btn-delete" data-confirm="{{ $confirm ?? 'Are you sure you want to delete this?' }}">
+            <i class="fas fa-trash"></i> Delete {{ $label ?? '' }}
+        </button>
+    @endcomponent
+@endcan

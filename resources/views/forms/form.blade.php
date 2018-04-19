@@ -1,4 +1,4 @@
-<form class="form" method="POST" action="{{ $route or '' }}" enctype="multipart/form-data">
+<form class="form {{ $class ?? '' }}" method="POST" action="{{ $action ?? $route ?? '' }}" enctype="multipart/form-data">
     {{ csrf_field() }}
 
     @isset($method)

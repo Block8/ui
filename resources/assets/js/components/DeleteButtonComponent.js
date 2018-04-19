@@ -4,22 +4,26 @@ class DeleteButtonComponent extends AdminUiComponent
     ready() {
         let self = this;
 
-        $('body').on('click', '.btn-delete[data-url]', e => {
+        $('body').on('click', '.btn-delete', e => {
             e.preventDefault();
             e.stopPropagation();
 
-            self.showDeleteConfirmation($(this));
+            let $btn = $(e.target);
+            let $form = $btn.parents('form');
+
+            self.showDeleteConfirmation($btn, $form);
         });
     }
 
-    showDeleteConfirmation($btn) {
+    showDeleteConfirmation($btn, $form) {
         let self = this;
-        let thing = $btn.data('thing');
-        let url = $btn.data('url');
+        let confirmation = $btn.data('confirm');
+
+        console.log($btn);
+        console.log(confirmation);
 
         swal({
-            title: 'Are you sure?',
-            text: 'This ' + thing + ' will be permanently deleted.',
+            text: confirmation,
             type: 'warning',
             showCancelButton: true,
             confirmButtonText: 'Yes, delete it',
@@ -27,33 +31,16 @@ class DeleteButtonComponent extends AdminUiComponent
             confirmButtonClass: "btn btn-success",
             cancelButtonClass: "btn btn-danger",
             buttonsStyling: false
-        }).then(() => {
-            $.ajax({
-                url: url,
-                method: 'DELETE',
-                headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
-                success: function () {
-                    self.showDeletedMessage();
-                },
-                failed: function () {
-                    self.showError('Sorry,', 'Could not delete ' + thing);
-                }
-            })
-        }, function(dismiss) {
-            // dismiss can be 'overlay', 'cancel', 'close', 'esc', 'timer'
-            if (dismiss === 'cancel') {
+        }).then((res) => {
+            if (res.value && res.value === true) {
+                $form.submit();
+            }
+
+            if (res.dismiss && (res.dismiss == 'cancel' || res.dismiss == 'close' || res.dismiss == 'esc')) {
                 self.showError('Cancelled');
             }
-        });
-    }
 
-    showDeletedMessage() {
-        swal({
-            title: 'Deleted',
-            type: 'success',
-            confirmButtonClass: "btn btn-success",
-            buttonsStyling: false
-        }).catch(swal.noop)
+        });
     }
 
     showError(title, text) {
