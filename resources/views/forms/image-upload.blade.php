@@ -9,6 +9,6 @@
     @endif
 
     @isset($image)
-        <img src="{{ $image }}">
+        <img src="{{ $image }}" style="display: block; max-width: 300px; max-height: 300px; margin: 15px 0; padding: 5px; box-shadow: 0 0 5px rgba(0,0,0,0.5);">
     @endisset
 </div>
