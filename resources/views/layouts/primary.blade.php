@@ -14,7 +14,7 @@
     @endif
 
     <link rel="stylesheet" href="/block8/ui/js/datetimepicker/css/bootstrap-datetimepicker.min.css">
-    <link rel="stylesheet" href="/block8/ui/js/select2/select2.css">
+    <link rel="stylesheet" href="/block8/ui/js/select2/dist/css/select2.min.css">
     <link rel="stylesheet" href="/block8/ui/css/animate.css">
 </head>
 <body>
@@ -79,7 +79,7 @@
 <script src="/block8/ui/js/jquery.min.js"></script>
 <script src="/block8/ui/js/moment.min.js"></script>
 <script src="/block8/ui/js/bootstrap-notify.min.js"></script>
-<script src="/block8/ui/js/select2/select2.js"></script>
+<script src="/block8/ui/js/select2/dist/js/select2.min.js"></script>
 <script src="/block8/ui/js/datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
 <script src="/block8/ui/js/sweetalert2/sweetalert2.all.min.js"></script>
 <script src="/block8/ui/js/chartist/chartist.min.js"></script>
