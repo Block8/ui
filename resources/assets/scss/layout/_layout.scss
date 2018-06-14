@@ -1,10 +1,15 @@
 
 .layout {
+  width: 100vw;
+  display: -ms-grid;
+  -ms-grid-columns: 260px calc(100vw - 260px);
+
   display: grid;
   grid-template-columns: 260px auto;
 }
 
 .main {
+  -ms-grid-column: 2;
   background: $color-body;
   height: 100vh;
   overflow-x: hidden;
