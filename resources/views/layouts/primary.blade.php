@@ -59,6 +59,12 @@
     </div>
 
     <div class="main">
+        <div class="browser-warning bg-warning-muted" style="position: absolute; top: 0; left: 0; right: 0; padding: 10px; border-radius: 0;">
+            <i class="fa fa-exclamation-triangle"></i>
+            <strong>Some things may not look quite right in Internet Explorer!</strong>
+            We strongly recommend using a modern web browser such as <a href="https://www.google.co.uk/chrome/">Google Chrome</a>, <a href="https://www.mozilla.org/en-GB/firefox/new/">Firefox</a> or <a href="https://www.microsoft.com/en-us/windows/microsoft-edge">Microsoft Edge</a>.
+        </div>
+
         <button class="sidebar-toggle"><i class="fa fa-bars"></i></button>
         <h1>@yield('title')</h1>
 
@@ -163,5 +169,16 @@
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDQanDqoNnzC5kouCf7g3bhRof75qNCOuM&callback=initMap&libraries=drawing,places" async defer></script>
 
+<!--[if IE]>
+<style>
+    .main {
+        padding-top: 50px;
+    }
+
+    .browser-warning {
+        display: block;
+    }
+</style>
+<![endif]-->
 </body>
 </html>
