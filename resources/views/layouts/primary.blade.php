@@ -22,9 +22,9 @@
     <div class="sidebar">
         <a class="logo" href="/">
             @isset($logo)
-            <img src="{{ $logo }}" alt="{{ getenv('APP_NAME') }}">
+            <img src="{{ $logo }}" alt="{{ config('app.name') }}">
             @else
-            {{ getenv('APP_NAME') }}
+            {{ config('app.name') }}
             @endisset
         </a>
 

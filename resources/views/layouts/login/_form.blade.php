@@ -1,5 +1,5 @@
 @component('ui::card')
-    @slot('title', $title ?? env('APP_NAME'))
+    @slot('title', $title ?? config('app.name'))
     @slot('icon', 'unlock')
 
     @component('ui::forms.form', ['route' => route('login'), 'method' => 'POST'])
