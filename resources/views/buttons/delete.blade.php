@@ -1,4 +1,4 @@
-@can('update', $model)
+@can('delete', $model)
     @component('ui::forms.form')
         @slot('action', $action)
         @slot('method', 'DELETE')
