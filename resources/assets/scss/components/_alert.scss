@@ -1,4 +1,3 @@
-
 .alert {
   background-color: $gray-400;
   color: $gray-900;
@@ -42,5 +41,11 @@
 
   .close-icon {
     float: right;
+  }
+}
+
+.main-panel {
+  .alert-banner {
+    padding: 5px;
   }
 }

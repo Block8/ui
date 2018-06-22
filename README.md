@@ -3,14 +3,14 @@ Laravel package providing a simple, clean, admin user interface.
 ###Configuration:
 
 #####1) UI Theme Primary Colour
-To change the default colour of the UI Package simply add the below variable
+To change the default colour of the UI Package simply add the `$color-primary` variable
 at your app's dashboard.scss file.
 ```
 $color-primary: "your-color";
 ```
 
 #####2) Brand Logo
-To load a brand logo on top of sidebar simply declare the variable before extending the layout
+To load a brand logo on top of sidebar simply declare the `logo` before extending the layout
 ```
 Example: 
 @php($logo = Storage::url($currentClient->logo))
@@ -42,27 +42,29 @@ Route::get('/notification/read-all/{user}', '\Block8\UI\Http\Controllers\Notific
 
 ##### 1) Alerts
 
-There are 2 types of alerts. Warning and Danger. Select which you want by declaring the 'type' variable
-and select if you want the icon on top of the bar by declaring the 'icon' variable true.
+There are 3 types of alerts. Warning, danger and success. Declare the `type` variable and the `icon` of you choice
 
 ```
 @section('alerts')
     @component('ui::alert')
-        @slot('icon', true)
         @slot('type', 'warning')
+        @slot('icon', 'exclamation-circle')
                 
         This is a bold <strong>alert</strong>.
     @endcomponent
 @endsection
 ```
 
-##### 2) Warnings
+##### 2) Alert-banner
 
-You can show warnings at the top of the main panel by adding alert components into the warnings section.
+You can show alert banners at the top of the main panel by adding `alert-banner` components into the `alert-banners` section.
 
 ```
-@section('warnings')
-    @component('ui::warning')
+@section('alert-banners')
+    @component('ui::alert-banner')
+        @slot('type', 'warning')
+        @slot('icon', 'exclamation-circle')
+        
         Hi <strong>{{ $user->name }}</strong>, your subscription is about to end.
     @endcomponent
 @endsection

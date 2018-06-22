@@ -1,5 +1,5 @@
-<div class="alert alert-overlay alert-{{ $type ?? 'warning' }} {{ isset($icon) ? $icon ? 'alert-with-icon' : '' : '' }}">
-    <i class="fas fa-{{ isset($type) ? $type == 'danger' ? 'exclamation' : 'exclamation-triangle' : 'exclamation-triangle' }}"></i>
+<div class="alert alert-overlay alert-{{ $type ?? 'warning' }} alert-with-icon">
+    <i class="fas fa-{{ $icon ?? 'exclamation-triangle' }}"></i>
 
     {{ $slot }}
 

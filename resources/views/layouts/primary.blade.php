@@ -93,7 +93,7 @@
 
     <div class="main-panel">
         <!--[if IE]>
-        <div class="bg-warning-muted">
+        <div class="alert-banner bg-warning-muted">
             <i class="fa fa-exclamation-triangle"></i>
             <strong>Some things may not look quite right in Internet Explorer!</strong>
             We strongly recommend using a modern web browser such as
@@ -103,7 +103,7 @@
         </div>
         <![endif]-->
 
-        @yield('warnings')
+        @yield('alert-banners')
 
         <div class="topbar">
             <h1>@yield('title')</h1>
