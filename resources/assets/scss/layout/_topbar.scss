@@ -1,0 +1,169 @@
+.main-panel {
+  .topbar {
+    padding: 10px 40px;
+    clear: both;
+
+    .topbar-dropdown {
+      float: right;
+      margin-top: 10px;
+
+      .nav {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+          display: block;
+        }
+
+        .dropdown {
+          position: relative;
+          float: right;
+
+          .dropdown-toggle {
+            padding: 15px;
+            font-size: 1.2em;
+
+            &.open {
+              background: $gray-300;
+            }
+
+            &:hover {
+              background: $gray-300;
+            }
+
+            .notification-counter {
+              position: absolute;
+              top: -10px;
+              right: 0;
+              border: 1px solid #FFF;
+              font-size: 9px;
+              background: #f44336;
+              color: #FFFFFF;
+              min-width: 20px;
+              padding: 0px 5px;
+              height: 20px;
+              border-radius: 10px;
+              text-align: center;
+              line-height: 19px;
+              vertical-align: middle;
+              display: block;
+            }
+          }
+        }
+
+        .dropdown-menu {
+          position: absolute;
+          display: none;
+          width: 360px;
+          min-height: 100px;
+          background: #fff;
+          border-radius: 3px;
+          right: 0;
+          left: auto;
+          padding: 0;
+          margin-top: 10px;
+          box-shadow: 5px 5px 15px $gray-500;
+          border-radius: 4px;
+          overflow: hidden;
+          z-index: 20000;
+
+          &.open {
+            display: block;
+          }
+
+          li {
+            padding: 10px;
+          }
+
+          .notification-box {
+            max-height: 450px;
+            overflow-y: auto;
+          }
+
+          .dropdown-header {
+            background: $color-primary;
+            font-weight: bold;
+            color: #fff;
+            padding: 3px;
+            text-align: center;
+          }
+
+          .notification-content {
+            margin: 3px;
+
+            .created-at {
+              font-size: 0.8em;
+              font-weight: bold;
+              color: $gray-600;
+            }
+
+            &:hover {
+              background: $gray-200;
+            }
+
+            a {
+              display: block;
+              font-size: 0.9em;
+              color: #000;
+
+              &:hover {
+                color: #000;
+                text-decoration: none;
+              }
+            }
+          }
+
+          .divider {
+            padding: 0;
+            margin: 0;
+            border-bottom: 1px solid $gray-600;
+            opacity: .08;
+          }
+        }
+      }
+    }
+
+    h1 {
+      font-weight: 100;
+      margin: 0;
+      float: left;
+    }
+  }
+}
+
+.notification-box {
+  .zero-notifications {
+    text-align: center;
+    font-size: 0.9em;
+    font-style: italic;
+    margin: 10px auto;
+    color: $gray-600;
+
+    &.side {
+      color: #fff;
+    }
+  }
+}
+
+.notification-actions {
+  padding: 3px 15px;
+  border-top: 1px solid $gray-300;
+
+  .mark {
+    float: right;
+  }
+
+  &.side {
+    .mark {
+      float: none;
+    }
+  }
+}
+
+// Small screens and below:
+@media (max-width: 767px) {
+  .topbar-dropdown {
+    display: none;
+  }
+}

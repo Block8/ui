@@ -100,3 +100,32 @@ a.btn, button.btn {
     margin-right: 7px;
   }
 }
+
+.btn-link {
+  background: none;
+  color: $color-primary;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.btn-icon {
+  background: none;
+  color: $gray-600;
+  border: none;
+  padding: 0;
+  font-size: 1.2em;
+  cursor: pointer;
+
+  &:hover {
+    color: $gray-800;
+  }
+}
+
+.themed-link {
+  color: $color-primary;
+}

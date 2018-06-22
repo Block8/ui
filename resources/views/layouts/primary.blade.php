@@ -10,7 +10,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     @if(file_exists(public_path('css/dashboard.css')))
-    <link href="{{ mix('/css/dashboard.css') }}" rel="stylesheet">
+        <link href="{{ mix('/css/dashboard.css') }}" rel="stylesheet">
     @endif
 
     <link rel="stylesheet" href="/block8/ui/js/datetimepicker/css/bootstrap-datetimepicker.min.css">
@@ -22,34 +22,67 @@
     <div class="sidebar">
         <a class="logo" href="/">
             @isset($logo)
-            <img src="{{ $logo }}" alt="{{ config('app.name') }}">
+                <img src="{{ $logo }}" alt="{{ config('app.name') }}">
             @else
-            {{ config('app.name') }}
+                {{ config('app.name') }}
             @endisset
         </a>
 
         @if(Auth::user())
-        <div class="user">
-            <a data-toggle="collapse" href="#userNavigation">
-                @if(!empty(Auth::user()->photo))
-                    <img class="img-circle" src="{{ Auth::user()->photo }}">
-                @endif
+            <div class="user">
+                <a data-toggle="collapse" href="#userNavigation">
+                    @if(!empty(Auth::user()->photo))
+                        <img class="img-circle" src="{{ Auth::user()->photo }}">
+                    @endif
 
-                {{ Auth::user()->name }}
-            </a>
+                    {{ Auth::user()->name }}
+                </a>
 
-            <div class="collapse" id="userNavigation" aria-expanded="false">
-                <ul class="nav">
-                    @yield('user-navigation')
-                    <li>
-                        @component('ui::forms.form', ['route' => route('logout'), 'method' => 'POST'])
-                            <button><i class="fas fa-fw fa-sign-out-alt"></i> Logout</button>
-                        @endcomponent
-                    </li>
-                </ul>
+                <div class="collapse" id="userNavigation" aria-expanded="false">
+                    <ul class="nav">
+                        @yield('user-navigation')
+                        <li>
+                            @component('ui::forms.form', ['route' => route('logout'), 'method' => 'POST'])
+                                <button><i class="fas fa-fw fa-sign-out-alt"></i> Logout</button>
+                            @endcomponent
+                        </li>
+                    </ul>
+                </div>
+
+                @isset($notifications)
+                    <a class="sidebar-notifications" data-toggle="collapse" href="#notifications">
+                        Notifications
+                    </a>
+
+                    <div class="collapse" id="notifications">
+                        <ul class="nav">
+                            <div class="notification-box">
+                                @if($notifications->count())
+                                    @foreach($notifications as $notification)
+                                        <li class="notification-content">
+                                            <a href="{{ route('notification.show', $notification->id) }}" id="{{ $notification->id }}" class="notification">
+                                                {!! $notification->data['message'] !!}
+                                                <br>
+                                                <span class="created-at">{{ Carbon\Carbon::parse($notification->created_at)->format('d/m/Y H:i') }}</span>
+                                            </a>
+                                        </li>
+                                        <li class="divider"></li>
+                                    @endforeach
+                                @else
+                                    <li class="zero-notifications side">You have no unread notifications</li>
+                                @endif
+                            </div>
+                            <li class="notification-actions side">
+                                <a href="{{ route('notification.index') }}" class="themed-link">View All</a>
+                                <a href="{{ route('notification.mark-all-read', Auth::user()) }}" class="themed-link mark">Mark as read</a>
+                            </li>
+                        </ul>
+                    </div>
+                @endisset
             </div>
-        </div>
         @endif
+
+
 
         <div class="sidebar-content">
             <ul class="fa-ul">
@@ -58,15 +91,62 @@
         </div>
     </div>
 
-    <div class="main">
-        <div class="browser-warning bg-warning-muted" style="position: absolute; top: 0; left: 0; right: 0; padding: 10px; border-radius: 0;">
+    <div class="main-panel">
+        <!--[if IE]>
+        <div class="bg-warning-muted">
             <i class="fa fa-exclamation-triangle"></i>
             <strong>Some things may not look quite right in Internet Explorer!</strong>
-            We strongly recommend using a modern web browser such as <a href="https://www.google.co.uk/chrome/">Google Chrome</a>, <a href="https://www.mozilla.org/en-GB/firefox/new/">Firefox</a> or <a href="https://www.microsoft.com/en-us/windows/microsoft-edge">Microsoft Edge</a>.
+            We strongly recommend using a modern web browser such as
+            <a href="https://www.google.co.uk/chrome/">Google Chrome</a>,
+            <a href="https://www.mozilla.org/en-GB/firefox/new/">Firefox</a> or
+            <a href="https://www.microsoft.com/en-us/windows/microsoft-edge">Microsoft Edge</a>.
+        </div>
+        <![endif]-->
+
+        @yield('warnings')
+
+        <div class="topbar">
+            <h1>@yield('title')</h1>
+            <button class="sidebar-toggle"><i class="fa fa-bars"></i></button>
+            @isset($notifications)
+                <div class="topbar-dropdown">
+                    <ul class="nav">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle">
+                                <i class="fa fa-bell"></i>
+                                @if($notifications->count())
+                                    <span class="notification-counter">{{ $notifications->count() }}</span>
+                                @endif
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="dropdown-header">Notifications</li>
+                                <div class="notification-box">
+                                    @if($notifications->count())
+                                        @foreach($notifications as $notification)
+                                            <li class="notification-content">
+                                                <a href="{{ route('notification.show', $notification->id) }}" id="{{ $notification->id }}" class="notification">
+                                                    {!! $notification->data['message'] !!}
+                                                    <br>
+                                                    <span class="created-at">{{ Carbon\Carbon::parse($notification->created_at)->format('d/m/Y H:i') }}</span>
+                                                </a>
+                                            </li>
+                                            <li class="divider"></li>
+                                        @endforeach
+                                    @else
+                                        <li class="zero-notifications">You have no unread notifications</li>
+                                    @endif
+                                </div>
+                                <li class="notification-actions">
+                                    <a href="{{ route('notification.index') }}" class="themed-link">View All</a>
+                                    <a href="{{ route('notification.mark-all-read', Auth::user()) }}" class="themed-link pull-right">Mark as read</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            @endisset
         </div>
 
-        <button class="sidebar-toggle"><i class="fa fa-bars"></i></button>
-        <h1>@yield('title')</h1>
 
         <div class="content">
             @yield('alerts')
@@ -149,7 +229,7 @@
         '<span data-notify="message">{2}</span>' +
         '</div>'
     });
-    
+
 
     $(document).ready(function () {
         @if(session('success'))
@@ -168,17 +248,5 @@
     });
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDQanDqoNnzC5kouCf7g3bhRof75qNCOuM&callback=initMap&libraries=drawing,places" async defer></script>
-
-<!--[if IE]>
-<style>
-    .main {
-        padding-top: 50px;
-    }
-
-    .browser-warning {
-        display: block;
-    }
-</style>
-<![endif]-->
 </body>
 </html>
