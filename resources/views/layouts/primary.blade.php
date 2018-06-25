@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="/block8/ui/js/datetimepicker/css/bootstrap-datetimepicker.min.css">
     <link rel="stylesheet" href="/block8/ui/js/select2/dist/css/select2.min.css">
     <link rel="stylesheet" href="/block8/ui/css/animate.css">
+    <link rel="stylesheet" href="/block8/ui/js/chartist/chartist.min.css">
 </head>
 <body>
 <div class="layout">

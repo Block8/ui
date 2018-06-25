@@ -4,8 +4,8 @@
     <textarea id="{{ $id or $name }}" name="{{ $name }}" class="form-control {{ $class or '' }}" @isset($rows) rows="{{ $rows }}" @endisset {{ isset($required) && $required ? 'required' : '' }}>{{ old($name, $value ?? '') }}</textarea>
 
     @if ($errors->has($name))
-        <span class="help-block">
-            <strong>{{ $errors->first($name) }}</strong>
-        </span>
+        <div class="form-error text-danger">
+            {{ $errors->first($name) }}
+        </div>
     @endif
 </div>

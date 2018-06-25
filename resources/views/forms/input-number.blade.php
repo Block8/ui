@@ -4,8 +4,8 @@
     class="form-control" value="{{ old($name, $value ?? '') }}" {{ isset($required) && $required ? 'required' : '' }}>
 
     @if ($errors->has($name))
-        <span class="help-block">
-            <strong>{{ $errors->first($name) }}</strong>
-        </span>
+        <div class="form-error text-danger">
+            {{ $errors->first($name) }}
+        </div>
     @endif
 </div>
