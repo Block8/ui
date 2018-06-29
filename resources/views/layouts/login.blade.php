@@ -1,7 +1,8 @@
 @extends('material::layouts.external')
 @section('content')
     <div class="login">
-
+        @yield('errors')
+        
         @if(!config('app.disable_login_form', false))
             @include('ui::layouts.login._form')
             @include('ui::layouts.login._external')
