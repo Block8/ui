@@ -12,7 +12,7 @@ class TabCardComponent extends AdminUiComponent
             }
         }
 
-        $('.card-tabs li a').on('click', function (e) {
+        $('.card-tabs > ul li a').on('click', function (e) {
             e.preventDefault();
             e.stopPropagation();
 
