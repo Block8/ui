@@ -1,6 +1,5 @@
 
 .sidebar {
-  -ms-grid-column: 1;
   background: $gray-800;
 
   //box-shadow: 0 10px 30px -12px rgba(0, 0, 0, 0.42), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
@@ -16,10 +15,8 @@
 
     img {
       display: block;
-      height: auto;
       margin: 15px auto;
       max-width: 80%;
-      max-height: 125px;
     }
   }
 
@@ -75,6 +72,19 @@
           text-align: center;
           margin-left: 10px;
         }
+
+        &.show {
+          .arrow {
+            transform: rotate(45deg) translate(-5px,-5px);
+            &:before {
+              transform: translate(10px,0);
+            }
+
+            &:after {
+              transform: rotate(90deg) translate(10px,0);
+            }
+          }
+        }
       }
 
       button {
@@ -90,6 +100,37 @@
         li a {
           font-size: 0.9em;
           padding: 8px 8px 8px 60px;
+        }
+      }
+
+      .arrow {
+        width: 8px;
+        height: 8px;
+        display: inline-block;
+        position: relative;
+        bottom: -5px;
+        left: -10px;
+        transition: 0.4s ease;
+        margin-top: 2px;
+        text-align: left;
+        transform: rotate(45deg);
+        float: right;
+
+        &:before, &:after {
+          position: absolute;
+          content: '';
+          display: inline-block;
+          width: 12px;
+          height: 2px;
+          background-color: #fff;
+          transition: 0.4s ease;
+        }
+
+        &:after {
+          position: absolute;
+          transform: rotate(90deg);
+          top: -5px;
+          left: 5px;
         }
       }
 
@@ -111,8 +152,6 @@
           color: #fff;
         }
       }
-
-
     }
   }
 
@@ -194,6 +233,11 @@
       }
     }
 
+    .sidebar-notifications {
+      display: none;
+      margin-left: 55px;
+    }
+
     .collapse {
       padding-top: 10px;
 
@@ -213,6 +257,10 @@
   color: $gray-800;
   float: right;
   font-size: 30px;
+
+  .fa-bars {
+    pointer-events: none;
+  }
 }
 
 // Small screens and below:
@@ -227,6 +275,12 @@
     &.active {
       box-shadow: 0 10px 30px -12px rgba(0, 0, 0, 0.42), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
       transform: translate3d(0, 0, 0);
+    }
+
+    .user {
+      .sidebar-notifications {
+        display: block;
+      }
     }
   }
 

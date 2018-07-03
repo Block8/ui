@@ -2,7 +2,9 @@ module.exports = function (mix) {
     mix.babel([
         'node_modules/block8.ui/resources/assets/js/core/admin-ui.js',
         'node_modules/block8.ui/resources/assets/js/core/component.js',
+        'node_modules/block8.ui/resources/assets/js/components/AlertComponent.js',
         'node_modules/block8.ui/resources/assets/js/components/SidebarComponent.js',
+        'node_modules/block8.ui/resources/assets/js/components/TopbarComponent.js',
         'node_modules/block8.ui/resources/assets/js/components/SelectComponent.js',
         'node_modules/block8.ui/resources/assets/js/components/TabCardComponent.js',
         'node_modules/block8.ui/resources/assets/js/components/DeleteButtonComponent.js',

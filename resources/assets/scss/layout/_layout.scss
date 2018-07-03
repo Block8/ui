@@ -8,18 +8,17 @@
   grid-template-columns: 260px auto;
 }
 
-.main {
-  -ms-grid-column: 2;
+.main-panel {
+  position: relative;
   background: $color-body;
   height: 100vh;
   overflow-x: hidden;
   overflow-y: auto;
-  position: relative;
-  padding: 20px 40px;
 
-  h1 {
-    font-weight: 100;
-    margin: 0 0 40px;
+  .content {
+    margin-top: 50px;
+    -ms-grid-column: 2;
+    padding: 20px 40px;
   }
 }
 
@@ -79,28 +78,8 @@ html.external {
   }
 }
 
-.browser-warning {
-  display: none;
-}
-
-@media (max-width: 767px) {
-  .main {
-    padding: 20px;
-  }
-}
-
 @media (min-width: 768px) {
   .sidebar-toggle {
     display: none;
-  }
-}
-
-@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-  .main {
-    padding-top: 50px;
-  }
-
-  .browser-warning {
-    display: block;
   }
 }

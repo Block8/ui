@@ -30,6 +30,16 @@ form {
     }
   }
 
+  .has-error {
+    label {
+      color: $red;
+    }
+
+    select, textarea, input[type="text"], input[type="email"], input[type="tel"], input[type="number"], input[type="password"] {
+      border: 1px solid $red;
+    }
+  }
+
   .select2-container {
     width: 100%;
 

@@ -1,12 +1,11 @@
-
 .alert {
   background-color: $gray-400;
   color: $gray-900;
   border-radius: 3px;
-  padding: 20px 15px;
+  padding: 15px 15px;
   box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(255, 255, 255, 0.4);
-  margin-bottom: 20px;
   position: relative;
+  margin-bottom: 30px;
 
   &.animated {
     width: 400px;
@@ -15,7 +14,6 @@
 
   &.alert-with-icon {
     padding-left: 70px;
-    margin-top: 45px;
 
     > svg {
       background: #fff;
@@ -39,5 +37,15 @@
 
   &.alert-overlay {
     z-index: 15000;
+  }
+
+  .close-icon {
+    float: right;
+  }
+}
+
+.main-panel {
+  .alert-banner {
+    padding: 5px;
   }
 }

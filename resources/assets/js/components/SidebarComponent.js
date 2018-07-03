@@ -11,8 +11,10 @@ class SidebarComponent extends AdminUiComponent
             let $el = $($(this).attr('href'));
 
             if ($el.is(':visible')) {
+                $(this).removeClass('show');
                 $el.slideUp();
             } else {
+                $(this).addClass('show');
                 $el.slideDown();
             }
         });
