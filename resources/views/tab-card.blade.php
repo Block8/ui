@@ -1,4 +1,4 @@
-<div class="card card-tabs {{ $class or '' }}">
+<div class="card card-tabs {{ $class ?? '' }}">
     <ul>
         {{ $tabs }}
     </ul>

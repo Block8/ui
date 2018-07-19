@@ -1,7 +1,7 @@
-<button type="submit" class="btn {{ $class or 'btn-success' }}">
+<button type="submit" class="btn {{ $class ?? 'btn-success' }}" {{ isset($disabled) && $disabled ? 'disabled' : '' }}>
     @isset($icon)
         <i class="fas fa-{{ $icon }}"></i>
     @endisset
 
-    {{ $label or 'Submit' }}
+    {{ $label ?? 'Submit' }}
 </button>

@@ -1,12 +1,12 @@
-<div class="card {{ $class or '' }} {{ !empty($icon) || !empty($image) ? 'with-icon' : '' }}">
+<div class="card {{ $class ?? '' }} {{ !empty($icon) || !empty($image) ? 'with-icon' : '' }}">
     @isset($icon)
-    <div class="icon bg-{{ $color or 'primary' }}">
+    <div class="icon bg-{{ $color ?? 'primary' }}">
         <i class="fa-fw fas fa-{{ $icon }}"></i>
     </div>
     @endisset
 
     @isset($image)
-        <div class="image bg-{{ $color or 'primary' }}">
+        <div class="image bg-{{ $color ?? 'primary' }}">
             <img src="{{ $image }}">
         </div>
     @endisset

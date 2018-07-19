@@ -1,8 +1,8 @@
-<div class="map material-map" id="{{ $id or 'map' }}" @isset($style)style="{{ $style }}"@endisset></div>
+<div class="map material-map" id="{{ $id ?? 'map' }}" @isset($style)style="{{ $style }}"@endisset></div>
 
 @push('scripts')
 <script>
-    $('#{{ $id }}').data('zoom', {{ $zoom or 10 }});
+    $('#{{ $id }}').data('zoom', {{ $zoom ?? 10 }});
 
     @if(!empty($center))
     $('#{{ $id }}').data('center', {!! json_encode($center) !!});

@@ -1,7 +1,13 @@
 <div class="form-group">
     <div class="checkbox">
         <label>
-            <input type="checkbox" name="{{ $name }}" class="{{ $class or '' }}" value="{{ $value or 1 }}" @if(isset($checked) && $checked) checked @endif> {{ $label }}
+            <input type="checkbox"
+                   name="{{ $name }}"
+                   class="{{ $class ?? '' }}"
+                   value="{{ $value ?? 1 }}"
+                    {{ isset($required) && $required ? 'required' : '' }}
+                    {{ isset($disabled) && $disabled ? 'disabled' : '' }}
+            > {{ $label }}
         </label>
     </div>
 </div>

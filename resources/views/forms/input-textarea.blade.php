@@ -1,7 +1,8 @@
 <div class="form-group {{ $errors->has($name) ? 'has-error' : '' }}">
-    <label for="{{ $id or $name }}" class="control-label">{{ $label }}</label>
+    <label for="{{ $id ?? $name }}" class="control-label">{{ $label }}</label>
 
-    <textarea id="{{ $id or $name }}" name="{{ $name }}" class="form-control {{ $class or '' }}" @isset($rows) rows="{{ $rows }}" @endisset {{ isset($required) && $required ? 'required' : '' }}>{{ old($name, $value ?? '') }}</textarea>
+    <textarea id="{{ $id ?? $name }}" name="{{ $name }}"
+              class="form-control {{ $class ?? '' }}" @isset($rows) rows="{{ $rows }}" @endisset {{ isset($required) && $required ? 'required' : '' }} {{ isset($readOnly) && $readOnly ? 'readonly' : '' }} {{ isset($disabled) && $disabled ? 'disabled' : '' }}>{{ old($name, $value ?? '') }}</textarea>
 
     @if ($errors->has($name))
         <div class="form-error text-danger">

@@ -1,7 +1,12 @@
 <div class="form-group {{ $errors->has($name) ? 'has-error' : '' }}">
-    <label for="{{ $id or $name }}" class="control-label">{{ $label }}</label>
+    <label for="{{ $id ?? $name }}" class="control-label">{{ $label }}</label>
 
-    <select id="{{ $id or $name }}" class="form-control {{ $class or '' }}" name="{{ $name }}" {{ isset($required) && $required ? 'required' : '' }}>
+    <select id="{{ $id ?? $name }}"
+            class="form-control {{ $class ?? '' }}"
+            name="{{ $name }}"
+            {{ isset($required) && $required ? 'required' : '' }}
+            {{ isset($disabled) && $disabled ? 'disabled' : '' }}
+    >
         <option></option>
 
         @if(isset($options))

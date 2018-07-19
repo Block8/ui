@@ -1,3 +1,3 @@
-<div id="{{ $panel }}" class="tab-panel {{ $active or false ? 'active' : '' }}">
+<div id="{{ $panel }}" class="tab-panel {{ $active ?? false ? 'active' : '' }}">
     {{ $slot }}
 </div>

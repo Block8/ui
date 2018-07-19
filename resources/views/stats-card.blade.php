@@ -1,6 +1,6 @@
 <div class="card card-stats with-icon">
-    <div class="icon bg-{{ $color or 'primary' }}">
-        <i class="fa-fw fas fa-{{ $icon or 'info-circle' }}"></i>
+    <div class="icon bg-{{ $color ?? 'primary' }}">
+        <i class="fa-fw fas fa-{{ $icon ?? 'info-circle' }}"></i>
     </div>
 
     <dt class="title">{{ $title }}</dt>
