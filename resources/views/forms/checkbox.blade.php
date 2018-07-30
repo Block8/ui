@@ -5,8 +5,9 @@
                    name="{{ $name }}"
                    class="{{ $class ?? '' }}"
                    value="{{ $value ?? 1 }}"
-                    {{ isset($required) && $required ? 'required' : '' }}
-                    {{ isset($disabled) && $disabled ? 'disabled' : '' }}
+                   {{ isset($checked) && $checked ? 'checked' : '' }}
+                   {{ isset($required) && $required ? 'required' : '' }}
+                   {{ isset($disabled) && $disabled ? 'disabled' : '' }}
             > {{ $label }}
         </label>
     </div>
