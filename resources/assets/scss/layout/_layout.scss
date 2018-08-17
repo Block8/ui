@@ -14,10 +14,10 @@
   height: 100vh;
   overflow-x: hidden;
   overflow-y: auto;
+  -ms-grid-column: 2;
 
   .content {
     margin-top: 50px;
-    -ms-grid-column: 2;
     padding: 20px 40px;
   }
 }

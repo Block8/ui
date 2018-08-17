@@ -3,6 +3,7 @@
     <input id="{{ $id ?? $name }}"
            name="{{ $name }}"
            type="{{ $type ?? 'text' }}"
+           placeholder="{{ $placeholder ?? '' }}"
            class="form-control {{ $class ?? '' }}"
            value="{{ old($name, $value ?? '') }}"
             {{ isset($required) && $required ? 'required' : '' }}

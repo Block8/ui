@@ -5,11 +5,16 @@ class HtmlEditorComponent extends AdminUiComponent
         let self = this;
 
         $('.html-editor').each(function () {
+            console.log('HTML EDITOR COMPONENT');
+            
             let $el = $(this);
 
             let config = {
                 toolbar: [ 'heading', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote' ],
+                fillEmptyBlocks: false,
             };
+
+            console.log(config);
 
             if ($el.data('upload')) {
                 config.toolbar.push('imageUpload');
