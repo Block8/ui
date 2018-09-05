@@ -170,10 +170,11 @@
 <script src="/block8/ui/js/datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
 <script src="/block8/ui/js/sweetalert2/sweetalert2.all.min.js"></script>
 <script src="/block8/ui/js/chartist/chartist.min.js"></script>
+@if(($ckeditorVersion ?? 5) == 5)
 <script src="/block8/ui/js/ckeditor5/ckeditor.js"></script>
-
-
-
+@else
+<script src="/block8/ui/js/ckeditor/ckeditor.js"></script>
+@endif
 
 <script src="{{ mix('/block8/ui/js/ui.js') }}"></script>
 
