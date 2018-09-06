@@ -33,6 +33,7 @@ class HtmlEditorComponent extends AdminUiComponent
                 removeButtons: 'Subscript,Superscript,Cut,Copy,Paste,PasteText,PasteFromWord,Undo,Redo,Scayt,Anchor,Image,Table,HorizontalRule,SpecialChar,Maximize,Source,Strike,About,Outdent,Indent,Styles',
                 fillEmptyBlocks: false,
                 removePlugins: 'elementspath',
+                contentsCss: '/css/ckeditor.css',
             };
 
             CKEDITOR.replace($el.attr('id'), config);

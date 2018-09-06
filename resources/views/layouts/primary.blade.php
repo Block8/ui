@@ -95,7 +95,6 @@
     <div class="main-panel">
         <!--[if IE]>
         <div class="alert-banner bg-warning-muted">
-            <i class="fa fa-exclamation-triangle"></i>
             <strong>Some things may not look quite right in Internet Explorer!</strong>
             We strongly recommend using a modern web browser such as
             <a href="https://www.google.co.uk/chrome/">Google Chrome</a>,
