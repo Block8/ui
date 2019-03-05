@@ -25,6 +25,4 @@
     @endcomponent
 @endcomponent
 
-@if($errors->count())
-    <div class="alert alert-danger"><strong>Forgotten your password?</strong> <a href="{{ route('password.request') }}">Reset it here</a>.</div>
-@endif
+<div class="alert alert-{{ $errors->count() ? 'danger' : 'default' }}" style="box-shadow: none;"><strong>Forgotten your password?</strong> <a href="{{ route('password.request') }}">Reset it here</a>.</div>
